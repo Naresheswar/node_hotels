@@ -1,10 +1,10 @@
 const moongse = require('mongoose');
-const mongoURL = 'mongodb://127.0.0.1:27017/hotels';
-moongse.connect(mongoURL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+require('dotenv').config();
+ //const mongoURL = process.env.MONGO_URLDB;    //Local MongoDB connection
+const mongoURL = process.env.MONGO_URL;   // MongoDB Atlas connection string from .env file
 
+
+moongse.connect(mongoURL);
 
 const db=moongse.connection;
 
@@ -17,10 +17,9 @@ db.on('error',(error)=>{
 });
 
 
+
 db.on('disconnected',()=>{
     console.log('Database disconnected');
 });
 
 module.exports = db;
-
-

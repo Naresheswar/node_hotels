@@ -6,13 +6,15 @@ app.use(bodyParser.json());
 const Person=require('./modules/person');
 const MenuItem = require('./modules/Menu');
 
+require('dotenv').config();
 
+const PORT = process.env.PORT || 3000;
 
 const personRoutes= require('./routes/personRoutes');
 
 app.use('/person',personRoutes)
 
 
-app.listen(3000,()=>{
-    console.log('Server is running on port 3000');  
+app.listen(PORT,()=>{
+    console.log('Server is running on port 3000');
 })
