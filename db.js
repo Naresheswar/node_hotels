@@ -4,7 +4,11 @@ require('dotenv').config();
 const mongoURL = process.env.MONGO_URL;   // MongoDB Atlas connection string from .env file
 
 
-moongse.connect(mongoURL);
+moongse.connect(mongoURL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 
 const db=moongse.connection;
 
