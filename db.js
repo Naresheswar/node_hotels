@@ -1,7 +1,7 @@
 const moongse = require('mongoose');
 require('dotenv').config();
- //const mongoURL = process.env.MONGO_URLDB;    //Local MongoDB connection
-const mongoURL = process.env.MONGO_URL;   // MongoDB Atlas connection string from .env file
+const mongoURL = process.env.MONGO_URLDB;    //Local MongoDB connection
+//const mongoURL = process.env.MONGO_URL;   // MongoDB Atlas connection string from .env file
 
 
 moongse.connect(mongoURL,{
